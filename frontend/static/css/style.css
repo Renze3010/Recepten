@@ -1,0 +1,36 @@
+.header-wrapper{
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 40vh;
+}
+.header-wrapper img {
+    object-fit: cover;
+    height: 40vh;
+    width: 100vw;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.recept-wrapper button{
+
+
+
+}
+
+@media (max-width: 991px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 991px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
