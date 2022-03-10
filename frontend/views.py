@@ -14,3 +14,7 @@ class HomeView(View):
 class HelpView(View):
     def get(self, request, *args, **kwargs):
         return render(request, "help_view.html")
+
+class OpgeslagenView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "opgeslagen_view.html")

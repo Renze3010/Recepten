@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("api.urls")),
     path('', views.HomeView.as_view(), name="home"),
-    path('help/', views.HelpView.as_view(), name="help")
+    path('help/', views.HelpView.as_view(), name="help"),
+    path('opgeslagen/', views.OpgeslagenView.as_view(), name="opgeslagen")
 ]
