@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="opgeslagen-wrapper my-5">
+        <a href="" class="row">
+            <div class="col-md-4">
+                <img src="{% static 'img/kip.png' %}" alt="biefstuk" class="img-fluid">
+            </div>
+            <div class="col-md-7">
+                <h3 class="my-2">aap</h3>
+                <p>lekkere bieftsuk</p>
+            </div>
+            <div class="col-md-1">
+                <div class="d-flex justify-content-end h-100">
+                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+{% endblock content %}
