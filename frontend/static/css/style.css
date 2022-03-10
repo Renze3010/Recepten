@@ -17,11 +17,20 @@
     transform: translate(-50%, -50%);
 }
 
-.recept-wrapper button{
 
 
+ .recept-wrapper button.btn.btn-primary{
+    height: 80px;
+    width: 80px;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer; 
 
-}
+} 
+
+
 
 @media (max-width: 991px) {
     .hide-mobile {
