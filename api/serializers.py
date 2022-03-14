@@ -10,6 +10,6 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
 class ReceptSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recept
-        fields = ('name', 'description', 'ingredients', 'persons', 'preperation_time')
+        fields = ('pk', 'name', 'description', 'ingredients', 'persons', 'preperation_time')
 
         

@@ -23,5 +23,7 @@ urlpatterns = [
     path('', include("api.urls")),
     path('', views.HomeView.as_view(), name="home"),
     path('help/', views.HelpView.as_view(), name="help"),
-    path('opgeslagen/', views.OpgeslagenView.as_view(), name="opgeslagen")
+    path('opgeslagen/', views.OpgeslagenView.as_view(), name="opgeslagen"),
+    path('opslaan/',views.OpslaanView.as_view(),name="opslaan"),
+    path('delete/',views.DeleteView.as_view(),name="delete"),
 ]

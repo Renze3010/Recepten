@@ -1,4 +1,3 @@
-from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -16,3 +15,7 @@ class Recept(models.Model):
     ingredients = models.CharField(max_length=255)
     persons = models.CharField(max_length=60)
     preperation_time = models.CharField(max_length=25)
+
+class Opgeslagen(models.Model):
+    receptPK = models.IntegerField()
+    userPK = models.IntegerField()

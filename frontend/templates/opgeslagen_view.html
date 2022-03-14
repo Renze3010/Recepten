@@ -3,22 +3,29 @@
 
 {% block content %}
 <div class="container">
-    <div class="opgeslagen-wrapper my-5">
+    {% for item in recepten %}
+    <div class="opgeslagen-wrappe%%r my-5">
         <a href="" class="row">
             <div class="col-md-4">
                 <img src="{% static 'img/kip.png' %}" alt="biefstuk" class="img-fluid">
             </div>
             <div class="col-md-7">
-                <h3 class="my-2">aap</h3>
-                <p>lekkere bieftsuk</p>
+                <h3 class="my-2"></h3>
+                <p>{{item.name}}
             </div>
             <div class="col-md-1">
                 <div class="d-flex justify-content-end h-100">
-                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                    {{recepten.pk}}
+                    <form action="{% url 'delete' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{item.pk}}" name="pk">
+                        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
                 </div>
             </div>
         </a>
     </div>
+    {% endfor %}
 
 
 
