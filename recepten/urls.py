@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from backend.views import SignUpView
 from frontend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include("api.urls")),
     path('', views.HomeView.as_view(), name="home"),
     path('help/', views.HelpView.as_view(), name="help"),
