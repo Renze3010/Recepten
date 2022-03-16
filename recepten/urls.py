@@ -29,4 +29,5 @@ urlpatterns = [
     path('opgeslagen/', views.OpgeslagenView.as_view(), name="opgeslagen"),
     path('opslaan/',views.OpslaanView.as_view(),name="opslaan"),
     path('delete/',views.DeleteView.as_view(),name="delete"),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

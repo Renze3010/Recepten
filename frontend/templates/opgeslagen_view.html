@@ -4,18 +4,18 @@
 {% block content %}
 <div class="container">
     {% for item in recepten %}
-    <div class="opgeslagen-wrappe%%r my-5">
+    <div class="opgeslagen-wrapper my-5">
         <a href="" class="row">
             <div class="col-md-4">
                 <img src="{% static 'img/kip.png' %}" alt="biefstuk" class="img-fluid">
             </div>
             <div class="col-md-7">
                 <h3 class="my-2"></h3>
-                <p>{{item.name}}
+                <p>{{item.recept.name}}
             </div>
             <div class="col-md-1">
                 <div class="d-flex justify-content-end h-100">
-                    {{recepten.pk}}
+                    {{item.pk}}
                     <form action="{% url 'delete' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" value="{{item.pk}}" name="pk">

@@ -26,19 +26,18 @@ class OpgeslagenView(LoginRequiredMixin, View):
         opgeslagen = Opgeslagen.objects.filter(userPK = request.user.pk)
         for item in opgeslagen:
             recept = Recept.objects.get(pk=item.receptPK)
-            context["recepten"].append(recept)
+            context["recepten"].append({"recept": recept, "pk": item.pk})
 
         return render(request, "opgeslagen_view.html", context)
 
 class OpslaanView(View):
     def post(self, request, *args, **kwargs):
-        saved = Opgeslagen(userPK = request.user.pk, receptPK = request.POST.get("receptPK"))
-        saved.save()
+        Opgeslagen.objects.get_or_create(userPK = request.user.pk, receptPK = request.POST.get("receptPK"))
 
         return redirect("opgeslagen")
 
 class DeleteView(View):
     def post(self, request, *args, **kwargs):
-        Opgeslagen.objects.filter(pk=request.POST.pk).delete()
+        Opgeslagen.objects.get(pk=request.POST.get("pk")).delete()
 
         return redirect("opgeslagen")
