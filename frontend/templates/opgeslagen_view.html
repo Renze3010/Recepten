@@ -7,7 +7,7 @@
     <div class="opgeslagen-wrapper my-5">
         <a href="" class="row">
             <div class="col-md-4">
-                <img src="{% static 'img/kip.png' %}" alt="biefstuk" class="img-fluid">
+                <img src="{{item.recept.image.url}}" alt="{{item.recept.image}}" class="img-fluid">
             </div>
             <div class="col-md-7">
                 <h3 class="my-2"></h3>
@@ -15,7 +15,6 @@
             </div>
             <div class="col-md-1">
                 <div class="d-flex justify-content-end h-100">
-                    {{item.pk}}
                     <form action="{% url 'delete' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" value="{{item.pk}}" name="pk">
