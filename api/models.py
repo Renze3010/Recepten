@@ -9,12 +9,14 @@ class Restaurant(models.Model):
     zip_code = models.CharField(max_length=60)
     phone = models.CharField(max_length=60)
 
+
 class Recept(models.Model):
     name = models.CharField(max_length=60, null=True)
     description = models.CharField(max_length=255)
     ingredients = models.CharField(max_length=255)
     persons = models.CharField(max_length=60)
     preperation_time = models.CharField(max_length=25)
+    image = models.ImageField(null=True)
 
 class Opgeslagen(models.Model):
     receptPK = models.IntegerField()
