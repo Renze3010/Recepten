@@ -15,19 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 from backend.views import SignUpView
 from frontend import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('signup/', SignUpView.as_view(), name='signup'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('', include("api.urls")),
-    path('', views.HomeView.as_view(), name="home"),
-    path('help/', views.HelpView.as_view(), name="help"),
-    path('opgeslagen/', views.OpgeslagenView.as_view(), name="opgeslagen"),
-    path('opslaan/',views.OpslaanView.as_view(),name="opslaan"),
-    path('delete/',views.DeleteView.as_view(),name="delete"),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path("admin/", admin.site.urls),
+    path("signup/", SignUpView.as_view(), name="signup"),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("", include("api.urls")),
+    path("", views.HomeView.as_view(), name="home"),
+    path("help/", views.HelpView.as_view(), name="help"),
+    path("opgeslagen/", views.OpgeslagenView.as_view(), name="opgeslagen"),
+    path("opslaan/", views.OpslaanView.as_view(), name="opslaan"),
+    path("delete/", views.DeleteView.as_view(), name="delete"),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
